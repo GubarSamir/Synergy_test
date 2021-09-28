@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Update_group
+{% endblock %}
+
+{% block header %}
+    Update group
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <button class="btn btn-success mt-3" type="submit" id="btn_save">Save</button>
+        <a class="btn btn-primary mt-3" href="{% url 'groups:list' %}">Cancel</a>
+    </form>
+{#  {% with list_objects=group.users.all %} #}
+    {% with list_objects=users %}
+        {% include 'includes/users_list_table.html' %}
+    {% endwith %}
+{#    <table class="table table-hover table-sm">#}
+{#        <tr>#}
+{#            <th></th>#}
+{#            <th>First name</th>#}
+{#            <th>Last name</th>#}
+{#            <th>Email</th>#}
+{#            <th>age</th>#}
+{#            <th><i class="bi bi-pencil-fill"></i></th>#}
+{#            <th>🚮</th>#}
+{#        </tr>#}
+{#        {% for User in group.users.all %}#}
+{#        <tr>#}
+{#            <td>{{ forloop.counter }}</td>#}
+{#            <td>{{ User.first_name }}</td>#}
+{#            <td>{{ User.last_name }}</td>#}
+{#            <td>{{ User.email }}</td>#}
+{#            <td>{{ User.age }}</td>#}
+{#            <td><a href="{% url 'users:update' User.id %}">EDIT</a></td>#}
+{#            <td><a href="{% url 'users:delete' User.id %}">DELETE</a></td>#}
+{#        </tr>#}
+{#        {% endfor %}#}
+{#    </table>#}
+{% endblock %}

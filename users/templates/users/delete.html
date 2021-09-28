@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete User
+{% endblock %}
+
+{% block header %}
+    Delete User.
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <p>Do you really remove {{ User.last_name }} {{ User.first_name }}?</p>
+    <input class="btn btn-danger" type="submit" value="Agree">
+    <a class="btn btn-primary" href="{% url 'users:list' %}">Cancel</a>
+</form>
+{% endblock %}

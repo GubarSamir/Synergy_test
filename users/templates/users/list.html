@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}users list{% endblock %}
+
+{% block header %}
+    List of users.
+{% endblock %}
+
+{% block content %}
+    <div class="collapse" id="collapseExample">
+    <form method="get">
+        {{ object_list.form | crispy }}
+        <input class="btn btn-success mb-3 mt-3" type="submit" value="Search">
+    </form>
+    </div>
+    {#<p><strong>Count of users: {{ object_list.qs.count }}</strong></p>#}
+    {% with list_objects=object_list  %}
+        {% include 'includes/users_list_table.html' %}
+    {% endwith %}
+    {# {% if is_paginated %} #}
+            {% include 'includes/paginator.html' %}
+        {# {% endif %} #}
+    {% endblock %}
