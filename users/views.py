@@ -1,25 +1,14 @@
 from django.contrib.messages.views import SuccessMessageMixin
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404  # noqa
-from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.decorators import login_required
-
-from django.contrib import messages
 
 from core.views import EditView
 from users.forms import UserCreateForm, UserUpdateForm, usersFilter
 from users.models import User
 
-from webargs.djangoparser import use_kwargs, use_args
-from webargs import fields
 from copy import copy
-
-
-def hello(request):
-    return HttpResponse('Hello')
-
 
 class UserCreateView(SuccessMessageMixin, CreateView):
     model = User

@@ -4,9 +4,9 @@
         <th>First name</th>
         <th>Last name</th>
         <th>Email</th>
+        <th>Created</th>
         <th>Age</th>
         <th>Group</th>
-        <th>Head man</th>
         <th><i class="bi bi-pencil-fill"></i></th>
         <th>🚮</th>
     </tr>
@@ -16,6 +16,7 @@
             <td>{{ User.first_name }}</td>
             <td>{{ User.last_name }}</td>
             <td>{{ User.email }}</td>
+            <td>{{ User.enroll_date }}</td>
             <td>{{ User.age }}</td>
             <td>{% if User.group %}{{ User.group }}{% endif %}</td>
             <td>{% if User.headed_group %}{{ User.headed_group }}{% endif %}</td>

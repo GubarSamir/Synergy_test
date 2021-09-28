@@ -2,9 +2,6 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from users.forms import UserUpdateForm
-from users.models import User
-
 
 def index(request):
     return render(

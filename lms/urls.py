@@ -17,12 +17,10 @@ import debug_toolbar
 from django.contrib import admin
 
 from core.views import index
-from users.views import hello
 from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', hello),
 
     path('', index, name='index'),
     path('accounts/', include('accounts.urls')),

@@ -13,10 +13,8 @@ class usersInlineTable(admin.TabularInline):
         'age',
     ]
 
-    # readonly_fields = fields
-    # show_change_link = True             # edit in User model
 
-    extra = 0               # default = 3
+    extra = 0
 
 
 class GroupAdmin(admin.ModelAdmin):

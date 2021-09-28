@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 
+
 class Group(models.Model):
     name = models.CharField(max_length=50)
     start_date = models.DateField(default=datetime.date.today)
